@@ -1,0 +1,17 @@
+version: '3.8'
+
+networks:
+  jsnet:
+    name: jsnet
+    driver: bridge
+
+services:
+  threejs:
+    container_name: threess
+    image: three
+    build: ./
+    ports:
+      - "9999:80"
+    networks:
+      - jsnet
+    restart: always
